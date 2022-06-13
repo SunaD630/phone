@@ -1,0 +1,37 @@
+"""
+TCP
+"""
+denjo@DJ00001:~/デスクトップ/i2$ nc -l 50000 | play -t raw -b 16 -c 1 -e s -r 44100 -
+
+-: (raw)
+
+ File Size: 0         
+  Encoding: Signed PCM    
+  Channels: 1 @ 16-bit   
+Samplerate: 44100Hz      
+Replaygain: off         
+  Duration: unknown      
+
+In:0.00% 00:00:16.16 [00:00:00.00] Out:713k  [      |      ]        Clip:0    
+Done.
+
+
+
+"""
+UDP
+"""
+denjo@DJ00001:~/デスクトップ/i2$ nc -u -l 50000 | play -t raw -b 16 -c 1 -e s -r 44100 -
+
+-: (raw)
+
+ File Size: 0         
+  Encoding: Signed PCM    
+  Channels: 1 @ 16-bit   
+Samplerate: 44100Hz      
+Replaygain: off         
+  Duration: unknown      
+
+In:0.00% 00:00:47.74 [00:00:00.00] Out:2.11M [      |      ]        Clip:0    
+
+UDPのほうが速い
+

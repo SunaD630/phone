@@ -1,0 +1,51 @@
+"""
+TCP
+"""
+denjo@DJ00001:~$ nc -l 50000
+#include<stdio.h>
+
+int main() {
+	printf("Hello nc!\n");
+	return 0;
+}
+
+denjo@DJ00001:~$ nc -l 50000 > main.c
+^C
+denjo@DJ00001:~$ ls
+Downloads  examples.desktop  request   snap       ダウンロード  デスクトップ  ビデオ    ミュージック
+ahaha.txt  main.c            response  sound.wav  テンプレート  ドキュメント  ピクチャ  公開
+denjo@DJ00001:~$ cat main.c
+#include<stdio.h>
+
+int main() {
+	printf("Hello nc!\n");
+	return 0;
+}
+
+
+"""
+UDP
+"""
+
+
+denjo@DJ00001:~$ nc -v  -l 50000
+Listening on 0.0.0.0 50000
+Connection received on 192.168.100.45 49866
+#include<stdio.h>
+
+int main() {
+	printf("Hello nc!\n");
+	return 0;
+}
+
+denjo@DJ00001:~$ nc -v -u -l 50000
+Bound on 0.0.0.0 50000
+Connection received on 192.168.100.45 59001
+XXXXX#include<stdio.h>
+
+int main() {
+	printf("Hello nc!\n");
+	return 0;
+}
+
+
