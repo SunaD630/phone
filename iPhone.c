@@ -92,13 +92,14 @@ void server(int port){
     pthread_t t[3];
     d[2].fp = fp;
     d[2].s = 0;
-    //pthread_create(&t[2],NULL,(void*)ring,&d[2]);
+    pthread_create(&t[2],NULL,(void*)ring,&d[2]);
     int s = accept(ss,(struct sockaddr*)&client_addr,&len);
     d[2].s = 1;
     d[0].s = s;
     d[0].data = data1;
     d[1].s = s;
     d[1].data = data2;
+    
     pthread_create(&t[0],NULL,(void*)rec_send,&d[0]);
     pthread_create(&t[1],NULL,(void*)play_recv,&d[1]);
     printf("s is %d\n",s);
